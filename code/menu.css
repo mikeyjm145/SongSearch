@@ -1,0 +1,101 @@
+/**Navigation Menu CSS**/
+#navbar {
+    overflow: hidden;
+    width: 80%;
+    margin: 0px auto;
+    background-color: #59c0c3;
+    padding: 14px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+#backTop, #minimize {
+    background-color: #59c0c3;
+    border-color: white;
+    padding: 10px;
+    margin-top: 5px;
+    color: white;
+    font-size: 15px;
+}
+
+#myInput {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Breezeicons-actions-22-edit-find.svg');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 60%;
+    font-size: 20px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+}
+    
+#SongHeadersFloat {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin-top: 5px;
+}
+
+#SongHeadersFloat tr td {
+    border: none;
+    height: 5px;
+}
+
+.custom-select {
+    width: 30%;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    padding: 5px 20px 5px 20px;
+    color: #59c0c3;
+}
+
+.defaultOption {
+    color: #59c0c3;
+}
+
+.sticky {
+    position: fixed;
+    top: .5vh;
+    left: 5%;
+    right: 5%;
+}
+
+.sticky + #navbar {
+    width: 100%;
+}
+
+.hiddenContent {
+    padding: 0 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.collapsible {
+    margin-top:5px;
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+}
+
+.hide, .hideIndef {
+    display: none;
+}

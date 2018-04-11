@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #Songs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #Songs td,
+        .songTH {
+            border: 1px solid #ddd;
+            padding: 8px;
+            overflow: auto;
+        }
+
+        #Song td:first-child,
+        .songTH:first-child {
+            width: 10%;
+        }
+
+        #Song td:last-child,
+        .songTH:last-child {
+            width: 40%;
+        }
+
+        #Songs tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #Songs tr:hover {
+            background-color: #ddd;
+        }
+
+        .songTH {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #59c0c3;
+            color: white;
+        }
+
+        #myInput {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Breezeicons-actions-22-edit-find.svg');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 50%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" onpaste="myFunction()" placeholder="Search for songs..." title="Type in a name">
+    <a href="test.php" target="_blank">Test</a>
+    <script type="text/javascript" charset="utf-8">
+    	function processCSVData() {
+		    var songList = [];
+		    var csvData = "The Wonderful Cross,Michael W. Smith,http://www.youtube.com/watch?v=_9oIJUK8QLA\nWorthy is The Lamb,Brooklyn Tabernacle Choir,http://www.youtube.com/watch?v=4Gae-n0Pb7Q\nHoly Holy Holy,Keith Green,http://www.youtube.com/watch?v=7YOGQfaxDCs\nCarribbean Medley,Donnie McClurkin,https://www.youtube.com/watch?v=ernVXpmugQE\nI Can Hear Your Voice,Michael W. Smith,http://www.youtube.com/watch?v=LlLlrJBWUbk\nAwesome God,N/A,http://www.youtube.com/watch?v=xC6VASn_VNU&list=PL83FCF6E99FFE1BBD\nDraw me close,Michael W. Smith,http://www.youtube.com/watch?v=7d_oYr-P16M\nThere is None Like You,Michael W. Smith,http://www.youtube.com/watch?v=vvm1bCMEqMM\nHere I am to worship,Michael W. Smith,http://www.youtube.com/watch?v=GP04GjifMPk\n(10000 Reasons) (bless the Lord),Matt Redman,http://www.youtube.com/watch?v=DXDGE_lRI0E\nImmanuel,Michael Card,http://www.youtube.com/watch?v=mrmMQdkBPwY\nBless The Lord Oh My Soul,Matt Redman,http://www.youtube.com/watch?v=XtwIT8JjddM\nIn Christ Alone - Worship Video,Adrienne Liesching-Geoff Moore & The Distance,http://www.youtube.com/watch?v=ENtL_li4GbE\nLord I Need You - Chris Tomlin,Chris Tomlin,http://www.youtube.com/watch?v=_rR_Rdb1CTE\nAmazing Grace,Gaither Vocal Band,http://www.youtube.com/watch?v=qQ8lzm8PqoQ\nGreat Is Thy Faithfulness,Wes Hampton,http://www.youtube.com/watch?v=yNZS5H9aNlY\nYou Are Holy (Prince of Peace),Michael W Smith,http://www.youtube.com/watch?v=QsYyuK1w3q0\nHear Us From Heaven,New Life Worship,http://www.youtube.com/watch?v=XK3tL1n_b_0\nForever,Michael W. Smith,http://www.youtube.com/watch?v=3lPdtqgouCc\nHallelujah You're Worthy,The Brooklyn Tabernacle Choir,http://www.youtube.com/watch?v=gt-IwvPPMmM\nHow Majestic Is Thy Name,Keith Green,http://www.youtube.com/watch?v=ydvVNE36oyY\nO Jah,Paul Wilbur,http://www.youtube.com/watch?v=_mbTef_rzqg\nOpen the eyes of my Heart,Michael W. Smith,http://www.youtube.com/watch?v=idQ1n3cdgfo\nDays of Elijah,Paul Wilbur,http://www.youtube.com/watch?v=Ra4HWj1jrJA\nOur God is Greater,Chris Tomlin,https://www.youtube.com/watch?v=GlEIUgU3ePI\nThere is a Redeemer,Keith Green,http://www.youtube.com/watch?v=C_YM_hYzcPo\nOne thing remains,Jesus Culture-Chris Quilala,http://www.youtube.com/watch?v=6_KXsMCJgBQ\nMercy,Matt Redman,http://www.youtube.com/watch?v=RUQv1mHxc_0\nHiding place,Sara Groves,https://www.youtube.com/watch?v=-p_A15gb_xQ\nBe unto your name,Travis Cottrell,https://www.youtube.com/watch?v=5pFr-K7IWzw\nEvery Praise,Hezekiah Walker,https://www.youtube.com/watch?v=XCOnRwDOI1c&index=1&list=ALGLx1orRGw4XoDMqplfyCYxW4bxm-NrkA\nGreatest Man I know,VaShawn Mitchell-Israel Houghton,https://www.youtube.com/watch?v=TV70nTCeYTU&index=2&list=ALGLx1orRGw4XoDMqplfyCYxW4bxm-NrkA\nWithholding nothing,William McDowell,https://www.youtube.com/watch?v=-0ku8xSYYzc&list=ALGLx1orRGw4XoDMqplfyCYxW4bxm-NrkA&index=4\nHear My Cry Oh God,Esther Mui,https://www.youtube.com/watch?v=3CRTY1xb0NE\nBreathe,Michael W Smith,https://www.youtube.com/watch?v=s4TQI8124DQ\nSing and Shout,Matt Redman,http://www.youtube.com/watch?v=Sw8lQ6dggGQ\nMy Jesus I Love Thee,Selah,http://www.youtube.com/watch?v=GPL-ZBV_CfA&list=PLDD87DB37A66777E6&index=90\nGuide me O thou great Redeemer,Kingsway Music,http://www.youtube.com/watch?v=XFqX9J7HNdM&index=36&list=PLDD87DB37A66777E6\nNow Thank We All our God,HymnCharts (Michael Tomlin),http://www.youtube.com/watch?v=9a6VmcfAJ3o&index=95&list=PLDD87DB37A66777E6\nImmortal Invisible God Only Wise,Alan Jackson,http://www.youtube.com/watch?v=mZsSRaaHKGA&list=PLDD87DB37A66777E6&index=59\nI surrender,VINEYARD,http://www.youtube.com/watch?v=bNTd0B-3dL4\nWhere I belong,Building 429,http://www.youtube.com/watch?v=Hoq44rFNbhY&list=PLC073043048F049F6\nAll Hail The Power of Jesus' Name,Stephen Newby,http://www.youtube.com/watch?v=itUNSwS4q9E&list=PLDD87DB37A66777E6\nBlessed Redeemer,Casting Crowns,http://www.youtube.com/watch?v=XyD1FSC3d08&list=PLDD87DB37A66777E6\nFairest Lord Jesus,Ross Parsley,http://www.youtube.com/watch?v=abgY3pKNJeQ&list=PLDD87DB37A66777E6\nRevive Us Again,Brentwood Benson,http://www.youtube.com/watch?v=K9Rd_AZTxXY&list=PLDD87DB37A66777E6\nAll Creatures of our God and King,David Crowder Band,http://www.youtube.com/watch?v=cObXwn-EgGY&list=PLDD87DB37A66777E6\nI surrender all,Michael W. Smith-Coalo Zamorano,http://www.youtube.com/watch?v=ULNH9svens0\nMy Jesus I Love Thee,Darlene Zschech,http://www.youtube.com/watch?v=rDXTqTuG1Nk\nI can sing of your Love forever,Martin Smith,https://www.youtube.com/watch?v=WudD0K6dpCg\nFrom The inside out,Hillsong United,https://www.youtube.com/watch?v=SZ-fghqc8Oo\nStand Up Stand Up For Jesus,Maranatha! Promise Band,http://www.youtube.com/watch?v=TRon2Q7yluk&list=PLDD87DB37A66777E6\nCaribbean Medley,Donnie McClurkin,https://www.youtube.com/watch?v=ernVXpmugQE\nAmazed,Desperation Band,https://www.youtube.com/watch?v=DQAPMRpNoe8\nBetter is one day,Charlie Hall,https://www.youtube.com/watch?v=5srFsXDQ7S8\nStronger,Hillsong Chapel,https://www.youtube.com/watch?v=sv55FMjeMV0\nThe Heart of Worship,Michael W Smith,https://www.youtube.com/watch?v=HeAwBmb_x28\nRescue,Desperation Band,https://www.youtube.com/watch?v=fPe9pzxRzo4\nOne thing remains,Jesus Culture,https://www.youtube.com/watch?v=6_KXsMCJgBQ\nRedeemed,Big Daddy Weave,https://www.youtube.com/watch?v=VzGAYNKDyIU\nOverwhelmed,Big Daddy Weave,https://www.youtube.com/watch?v=BiGb14tTaH4\nFrom the inside out - Worship video,Hillsong,https://www.youtube.com/watch?v=SZ-fghqc8Oo\nYour Grace finds me,Matt Redman,https://www.youtube.com/watch?v=hmFJkGEv3Lw\nI surrender,Hillsong Live,https://www.youtube.com/watch?v=HcnfT4arZtI&list=PLWvahZRxLnLPV5ECCHvmLuus6Tjmv4Oir\nAlpha and Omega,Israel and New Breed,https://www.youtube.com/watch?v=hLzX3rpbfSA&list=PL54B204D72BF2799A&index=94\nHosanna,Hillsong,https://www.youtube.com/watch?v=NoM0AT8fBvs\nHow Great is our God,Hillsong,https://www.youtube.com/watch?v=2WdOPfao4KI&list=PLWvahZRxLnLPV5ECCHvmLuus6Tjmv4Oir&index=10\nForever Reign,Hillsong Chapel,https://www.youtube.com/watch?v=_O1GleGicNg&index=12&list=PLWvahZRxLnLPV5ECCHvmLuus6Tjmv4Oir\nForever Reign,Hillsong Chapel,https://www.youtube.com/watch?v=mMknfsWrzN8\nStronger,Hillsong,https://www.youtube.com/watch?v=17xF0e-KNkQ&list=PLWvahZRxLnLPV5ECCHvmLuus6Tjmv4Oir&index=13\nWake,Sarah Reeves featuring Elise Miller (Hillsong Young and Free Cover),https://www.youtube.com/watch?v=vaYHUnK9lhU&list=PLWvahZRxLnLPV5ECCHvmLuus6Tjmv4Oir&index=17\nCornerstone,Hillsong Music Australia-Hillsong Live,https://www.youtube.com/watch?v=QvLxZEU02uI\nYahweh,Hillsong,https://www.youtube.com/watch?v=zXMwzW5nEow&list=PLWvahZRxLnLPV5ECCHvmLuus6Tjmv4Oir&index=22\nDesert song,Hillsong,https://www.youtube.com/watch?v=c3l1z7bXY9Y\nLord I Need You,Matt Maher,http://www.youtube.com/watch?v=LuvfMDhTyMA\nSpirit break out,Kim Walker-Smith,https://www.youtube.com/watch?v=5_TOOXRpn8w\nMighty to save,Michael W Smith,https://www.youtube.com/watch?v=cFWZfyso2MU\nGreat is the Lord,Michael W Smith,https://www.youtube.com/watch?v=TdqfAkHCZnA\nThe Only Name,Big Daddy Weave,https://www.youtube.com/watch?v=j9YC9a-QkCc\nGod's Great Dance Floor,Passion,https://www.youtube.com/watch?v=R-WOneEXr00\nEmmanuel,Hillsong,https://www.youtube.com/watch?v=2T-FSkUHwuc\nDon Meon Concert - to min 7,Don Meon (Up to min 7),https://www.youtube.com/watch?v=5OGreASOd4c\nOur Father,Don Meon,https://www.youtube.com/watch?v=3pe0XrCKjqM\nWhen the Spirit of the Lord,Fred Hammond,https://www.youtube.com/watch?v=0v4DBZW6RPM\nMercy,Matt Redman,https://www.youtube.com/watch?v=Vcps8EQUOt4\nEndless Hallelujah,Matt Redman,https://www.youtube.com/watch?v=BS1tZ-1acYs\nHere I am to worship,Christafari,https://www.youtube.com/watch?v=ixqj-jkL8pI\nHosanna,Christafari,https://www.youtube.com/watch?v=yrukH62mxMk\nOceans (where feet may fail),Christafari,https://www.youtube.com/watch?v=SSVjp9AFVWI\nStanding on the Promises,Alan Jackson,https://www.youtube.com/watch?v=lofNq0U2xk0\nHosanna,Christafari,https://www.youtube.com/watch?v=UVGZqZVzel4\nSearch Me Know Me,Travis Cottrell,https://www.youtube.com/watch?v=DQ4dVPPmUWc\nHoly is the Lord,Toronto Mass Choir,https://www.youtube.com/watch?v=2GzkEX_gjF4\nHoly Spirit,Jesus Culture,https://www.youtube.com/watch?v=eFByOX8Fb0M\nHome,Laura Woodley Osman,https://www.youtube.com/watch?v=YxAIlBUO6IU&list=RDYxAIlBUO6IU\nHoly Spirit | Holy Spirit You Are Welcome Here | Your Presence Lord,Kim Walker Smith and Jesus Culture,https://www.youtube.com/watch?v=ySTtmLR1Exg\nAwesome God,Hillsong UNITED,https://www.youtube.com/watch?v=6RGcb7alSk0\nBenediction,Matt Redman,https://www.youtube.com/watch?v=xEqclQGD7rs\nHow awesome is our God,Israel & New Breed,https://www.youtube.com/watch?v=ORFiPw_ArdM\nRescue,Desperation Band,https://www.youtube.com/watch?v=fPe9pzxRzo4\nAmazed,Desperation Band,https://www.youtube.com/watch?v=DQAPMRpNoe8\nHallelujah,Hillsong United,https://www.youtube.com/watch?v=zma3vcN1fUE\nAbove All,Michael W Smith,https://www.youtube.com/watch?v=rVQqdMt0NNQ\nBefore the throne - instrumental,Jordan Williams,https://www.youtube.com/watch?v=VOGC6a9mzjQ\nHosanna,Acappella Peppers,https://www.youtube.com/watch?v=2I-uF4A0mVY\nHosanna,Soweto Gospel Choir,https://www.youtube.com/watch?v=IZumvYIV1aw\nLift Him Up,Ron Kenoly,https://www.youtube.com/watch?v=_ovwc1ZIcAI\nMourning into Dancing,Ron Kenoly,https://www.youtube.com/watch?v=LaD3olllfwY\nBetter is one day,Passion,https://www.youtube.com/watch?v=WXLXBsHEh6g\nImmanuel,Hillsong,https://www.youtube.com/watch?v=I2kwPlI9UPw\nShouts Of Joy,Paul Wilbur,https://www.youtube.com/watch?v=8KSvPq5SD78\nMy Jesus I love Thee,Darlene Zschech,https://www.youtube.com/watch?v=kU_C3AFedoE\nCornerstone,Hillsong Chapel,https://www.youtube.com/watch?v=xF5RAlBt50s\nEmmanuel,Hillsong,https://www.youtube.com/watch?v=I2kwPlI9UPw\nAt the Cross,Chris Tomlin,https://www.youtube.com/watch?v=SUvpBphq5og&nohtml5=False\nHow Great is our God,Chirs Tomlin,https://www.youtube.com/watch?v=cKLQ1td3MbE&nohtml5=False\nGuide me O thou great Redeemer,Citrail,http://www.youtube.com/watch?v=XFqX9J7HNdM&index=36&list=PLDD87DB37A66777E6\nIn Christ Alone,Keith Getty & Stuart Townend,https://www.youtube.com/watch?v=TJqAWuo_bVo\nHoly Spirit,Maranatha Music,https://www.youtube.com/watch?v=J7HCYYGa7CE\nHoly Spirit,Francesca Battistelli,https://www.youtube.com/watch?v=2zEiiZi2DKk\nSet a fire,Jesus Culture,https://www.youtube.com/watch?v=-Jzqq4B8H2Q\nI can hear your voice,Aron van Selm (Michael W Smith Cover),https://www.youtube.com/watch?v=9JFf4sF0cVM\nForever Reign,Kristian Standfill,https://www.youtube.com/watch?v=588Ki1lDXoM\nI will run to you,Hillsong,https://www.youtube.com/watch?v=7s2wCVcmYOU\nWith All I Am,Hillsong,https://www.youtube.com/watch?v=FMrAafe7Mns\nStill,Hillsong United,https://www.youtube.com/watch?v=VFOas-l0_Wk\nAt the Cross,Hillsong,https://www.youtube.com/watch?v=aF-5aO2GYiY\nBlessed Be Your Name,Tree63,https://www.youtube.com/watch?v=du0il6d-DAk\nI Will Follow,Chris Tomlin,https://www.youtube.com/watch?v=i91B1IPl9oU\nOvercome,Desperation Band,https://www.youtube.com/watch?v=kEwq88_CPZY\nThe Lion and the Lamb,Big Daddy Weave,https://www.youtube.com/watch?v=rMTfj4xOjZk\nJesus Is The Best Thing,Martha Munizzi,https://www.youtube.com/watch?v=UeU-aAVZAjw\nMore Than Life,Hillsong,https://www.youtube.com/watch?v=t91W7ubOrrQ\nHail Jesus,Gerard Eldridge,https://www.youtube.com/watch?v=snUaLNAsx6s\nDraw me Nearer,Meredith Andrews,https://www.youtube.com/watch?v=teC0cmS_Y_o\nWe Fall Down,Chris Tomlin,https://www.youtube.com/watch?v=7Ge9O_HOKcE\nStronger,Hillsong,https://www.youtube.com/watch?v=G7YdtfjMAIc\nHow Great is Our God,Christafari,https://www.youtube.com/watch?v=tGZtUQz09cc\nEverlasting God,Christafari,https://www.youtube.com/watch?v=Pqw1S4pMKMg\nI Will Run to You,Hillsong,https://www.youtube.com/watch?v=FpNruT1t_dw\nLove you so much,Hiillsong,https://www.youtube.com/watch?v=HR_s7nVo_gg\nO Come All Ye Faithful (Christmas),Chris Tomlin,https://www.youtube.com/watch?v=-JSF9Uz20PY\nO Holy Night  (Christmas),Chris Tomlin,https://www.youtube.com/watch?v=hMSrZYA9gv0\nPotters Hand,Women of Faith,https://www.youtube.com/watch?v=bgXL3y9RIbI\nHark the Herald Angels Sing (Christmas),Chris Tomlin,https://www.youtube.com/watch?v=19w0IHPL4X0\nJoy To The World (Christmas),Chris Tomlin,https://www.youtube.com/watch?v=uX8xxQX4-7I&list=PL9BiFRxupybJWWQ711J8O-Uy2CgSoh-nz&index=6\nBless the Lord(10000 reasons),Christafari,https://www.youtube.com/watch?v=wDWSI7ILNiI\nForever Reign,Christafari,https://www.youtube.com/watch?v=pcLr4sx0BSE\nLord You are Good,Christafari,https://www.youtube.com/watch?v=2A3qhCtkMkw\nThe Stand,Hillsong,https://www.youtube.com/watch?v=kV5iZBTNYrk\nWorth It All,Meredith Andrews,https://www.youtube.com/watch?v=Dr01i-bCo5Y\nHoly Spirit,Christafari,https://www.youtube.com/watch?v=Y3JXo5AhvuM\nNever Let Go,Matt Redman,https://www.youtube.com/watch?v=y83-vMeWc9E\nGood Good Father,Chris Tomlin,https://www.youtube.com/watch?v=mBwXHpKVS5I\nTouch The Sky,Hillsong,https://www.youtube.com/watch?v=y1RQciil7B0\nFairest Lord Jesus,Ross Parsley,https://www.youtube.com/watch?v=6LW0otsea9Q\nOne Thing Remains,Christafari,https://www.youtube.com/watch?v=Qh5tqHjAlqg\nTouch The Sky,Hillsong,https://www.youtube.com/watch?v=y1RQciil7B0\nTrust in You,Lauren Daigle,https://www.youtube.com/watch?v=vXMPNXXnCls\nI Am Not Alone,Kari Jobe,https://www.youtube.com/watch?v=Ow4OfW4DP9s\nEagles Wings,Hillsong,https://www.youtube.com/watch?v=mVEvD30e5yc\nCome Alive (Dry Bones),Lauren Daigle,https://www.youtube.com/watch?v=VuCLqoxigNA\nGreat is Thy Faithfulness,Israel Houghton,https://www.youtube.com/watch?v=ry4Tb_B6KGc\nI Surrender All,Israel Houghton,https://www.youtube.com/watch?v=KRZDHmlmKCU\nHealer,Hillsong,https://www.youtube.com/watch?v=HS7FidYsTUU\nWhat a beautiful name,Hillsong,https://www.youtube.com/watch?v=r5L6QlAH3L4\nForever,Kari Jobe,https://www.youtube.com/watch?v=s6duzVn5M6E\nAt the Cross,Hillsong,https://www.youtube.com/watch?v=aF-5aO2GYiY\nGreat is Thy Faithfulness,Neville D,https://www.youtube.com/watch?v=ZlF-U1WFmF4\nHow Great Thou Art,Loyiso Bala,https://www.youtube.com/watch?v=v_rWMQp2Hho\nDesert Song,Hillsong*,https://www.youtube.com/watch?v=OmOgyohx_y4\nHosanna,Hillsong,https://www.youtube.com/watch?v=NoM0AT8fBvs\nKingdom Come,Loyiso Bala,https://www.youtube.com/watch?v=nOxC-cQYOcc\nPhambili (Be Glorified),Loyiso Bala,https://www.youtube.com/watch?v=_FtkP8TuEdE\nOur God is Awesome,Loyiso Bala,https://www.youtube.com/watch?v=8ptghCNWgdw\nSiyabonga (Thank you),Loyiso Bala,https://www.youtube.com/watch?v=C7jn_Qq5Nx8\nHiding Place,Don Meon,https://www.youtube.com/watch?v=RrlC55UP5iE\nChrist is enough,Hillsong,https://www.youtube.com/watch?v=E6MzgVsP2uE\nWhat a beautiful name,Hillsong,https://www.youtube.com/watch?v=dlcBgO820KA\nJesus I Need You,Hillsong,https://www.youtube.com/watch?v=lKM-8CZRplI\nHeart Like Heaven,Hillsong,https://www.youtube.com/watch?v=UFunKXJKwaE\nWhat a beautiful name,Hillsong (Video),https://www.youtube.com/watch?v=nQWFzMvCfLE\nHeart Like Heaven,Hillsong,https://www.youtube.com/watch?v=UFunKXJKwaE\nIt is well with my soul,Rasmussen Family,https://www.youtube.com/watch?v=xL80hXwyAac\nOpen Heaven,Hillsong,https://www.youtube.com/watch?v=e2QRV7Bxg2E\nLove On The Line,Hillsong,https://www.youtube.com/watch?v=CRTxsSXkH5w\nTransfiguration,Hillsong,https://www.youtube.com/watch?v=mwFZ0SJ5tHg\nHow He Loves,Crowder,https://www.youtube.com/watch?v=A5t7Uoanryg\nO Come to the Altar,Elevation Worship,https://www.youtube.com/watch?v=rYQ5yXCc_CA\nResurrecting,Elevation Worship,https://www.youtube.com/watch?v=Rf8Zzn4nOzc\nGracefully Broken,Matt Redman,https://www.youtube.com/watch?v=IJNR0lxbIP4\nGreat Are You Lord,Casting Crowns,https://www.youtube.com/watch?v=xMSad5fCiE4\nGracefully Broken,Tasha Cobbs Leonard,https://www.youtube.com/watch?v=4zP0p3nQYJk\nYeshua,Avion Blackman,https://www.youtube.com/watch?v=KOiGBpjnyyw\nThy Will be Done,Hillary Scott,https://www.youtube.com/watch?v=iCR_Fa8YV2U\nTouch the Sky,Hillsong,https://www.youtube.com/watch?v=_1chj9YOJW8\nThis I Believe,Hillsong,https://www.youtube.com/watch?v=VRzI_FbWTkg\nLove wont let me down,Hillsong Young & Free,https://www.youtube.com/watch?v=ScWcEpcp-OE\nGive Thanks,Don Moen,https://www.youtube.com/watch?v=KMTmZKotTYw\nI Surrender,Hillsong,https://www.youtube.com/watch?v=jgsqfjRslzA\nHow He Loves,Crowder,https://www.youtube.com/watch?v=glDktvjLJ_M\nNoel,Chris Tomlin,https://www.youtube.com/watch?v=5Vwu-t7QRaE\nI Surrender,Hillsong,https://www.youtube.com/watch?v=GwG0emQTuY0\nHere as in Heaven,Elevation Worship,https://www.youtube.com/watch?v=dHgiRKHIAVc\nBlessed be the Name of the Lord,Tree63,https://www.youtube.com/watch?v=0cAvqByM1Fk&list=PL517FAE2B6BCF9D42&index=4\nThis I believe (the Creed),Hillsong,https://www.youtube.com/watch?v=VRzI_FbWTkg\nFullness,Elevation Worship,https://www.youtube.com/watch?v=u9xxWz_vXws\nIt is Well,Kristene Dimarco,https://www.youtube.com/watch?v=QG5TnbD2op0\nEven If,Mercy me,https://www.youtube.com/watch?v=RFsuNIMYt3c\nEye of the Storm,Ryan Stevenson,https://www.youtube.com/watch?v=BTonhOA5lDs\nShoulders,for KING & COUNTRY,https://www.youtube.com/watch?v=TfiYWaeAcRw"
+;
+
+		    var content = csvData.split("\n");
+		    content.forEach(function (lines) {
+		        if (lines !== "") {
+		            var songData = lines.split(",");
+		
+		            var song = [songData[2], songData[0], songData[1]];
+		            songList.push(song);
+		        }
+		    });
+		    return songList;
+        }
+        
+        function createLink(link) {
+            var a = document.createElement("a");
+            a.href = link;
+            a.target = "_blank";
+            a.innerHTML = "Link";
+            return a;
+        }
+		
+        function createTable() {
+            var dataTH = ["Link", "Song Name", "Artist"];
+            var dataTD = processCSVData();
+
+            var songs = document.createElement("table");
+            songs.setAttribute("id", "Songs");
+            var songTB = document.createElement("tbody");
+
+            var tr = document.createElement("tr");
+            tr.setAttribute("id", "songTHR");
+
+            dataTH.forEach(function (dataRow) {
+                var thn = document.createElement("td");
+                thn.setAttribute("class", "songTH");
+                thn.appendChild(document.createTextNode(dataRow));
+                tr.appendChild(thn);
+            });
+
+            songTB.appendChild(tr);
+
+            dataTD.forEach(function (dataRow) {
+                var row = document.createElement("tr")
+                row.setAttribute("class", "dataRows");
+                row.style.display = "";
+                for (var i = 0; i < dataRow.length; i++) {
+                    if (i === 0) {
+                        var songURL = createLink(dataRow[i]);
+                        cell = document.createElement("td");
+                        cell.setAttribute("class", "dataCells");
+                        cell.appendChild(songURL);
+                        row.appendChild(cell);
+                    } else {
+                        cell = document.createElement("td");
+                        cell.setAttribute("class", "dataCells");
+                        cell.appendChild(document.createTextNode(dataRow[i]));
+                        row.appendChild(cell);
+                    }
+                }
+                songTB.appendChild(row);
+            });
+
+
+            songs.appendChild(songTB);
+            document.body.appendChild(songs);
+        }
+        createTable();
+
+        function myFunction() {
+            var input, filter, table, tr;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("Songs");
+            tr = table.getElementsByClassName("dataRows");
+
+            if (filter === "") {
+                for (var i = 0; i < tr.length; i++) {
+                    tr[i].style.display = "";
+                }
+                
+                return;
+            }
+
+            for (var i = 0; i < tr.length; i++) {
+                var td = tr[i].getElementsByClassName("dataCells");
+                if (td) {
+                    for (var j = 1; j < td.length; j++) {
+                        if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                            j = td.length;
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
