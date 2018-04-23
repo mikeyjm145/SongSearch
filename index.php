@@ -3,11 +3,12 @@
 
 <head>
         <title>WCIC Songs</title>
-        <script type="text/javascript" charset="utf-8" src="/../code/SongCollapsible.js"></script>
-        <script type="text/javascript" charset="utf-8" src="/../code/SongSearching.js"></script>
-        <link rel="stylesheet" href="/../code/main.css">
-        <link rel="stylesheet" href="/../code/menu.css">
-        <link rel="stylesheet" href="/../code/mediaQ.css">
+        <script type="text/javascript" charset="utf-8" src="/code/SongCollapsible.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/code/SongSearching.js"></script>
+        
+        <link rel="stylesheet" href="/code/main.css">
+        <link rel="stylesheet" href="/code/menu.css">
+        <link rel="stylesheet" href="/code/mediaQ.css">
 </head>
 
 <body>
@@ -33,10 +34,10 @@
                 <button id="minimize" onclick="hideSearch()">Hide Search</button>
         </div>
         
-        <script type="text/javascript" charset="utf-8" src="/../code/SongPageAnimations.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/code/SongPageAnimations.js"></script>
         
         <div class="content">
-                <?php include '../code/SongTableCreate.php';?>
+                <?php include 'code/SongTableCreate.php';?>
         <div>
 </body>
 
